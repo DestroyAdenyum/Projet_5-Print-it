@@ -6,12 +6,16 @@ const arrowright = document.querySelector('.arrow_right');
 const imgBanner = document.querySelector('.banner-img');
 const pBanner = document.querySelector('#banner p');
 
+// Sélecteur pour les cercles (dot)
+const dotBanner = document.querySelector('.dot');
+
 // Déclaration de la variable "index"
 // l'index du premier élément du tableau est 0, le 2ème=1, le 3ème=2...)
 let index = 0;
 
 // Tableau [] des images et taglines de la bannière
 const slides = [
+	// partie entre {} = un élément
 	{
 		image: 'slide1.jpg',
 		tagLine: 'Impressions tous formats <span>en boutique et en ligne</span>'
@@ -42,13 +46,13 @@ const changeValueElement = () => {
 arrowleft.addEventListener(`click`, () => {
 	index--;
 	// Revenir au début du tableau
+	// if (si) : () condition et {} action
 	if (index < 0 ) {
-		index = slides.length - 1;
-		
+		// si index inférieur à 0
+		index = slides.length - 1; 
+		// .length définit (ou renvoie) le nombre d'éléments dans le tableau "slides"
+		// -1 = revenir de 1 en arrière
 	}
-	// if : () condition et {} action
-	// .length définit (ou renvoie) le nombre d'éléments dans le tableau slides
-	// -1 = revenir de 1 en arrière
 	changeValueElement ();
 	console.log (index);
 });
@@ -66,4 +70,4 @@ arrowright.addEventListener(`click`, () => {
 	console.log (index);
 });
 
-
+// console.log (index) : sert à vérifier qu'on se trouve sur le bon index
